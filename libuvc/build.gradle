@@ -73,3 +73,18 @@ dependencies {
 	implementation 'com.elvishew:xlog:1.11.0'
 //	implementation project(path: ':libuvccommon')
 }
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.github.daniexs'
+            artifactId = 'libuvc'
+            version = '1.0.0'
+
+            afterEvaluate {
+                from components.release
+            }
+        }
+    }
+}
+
